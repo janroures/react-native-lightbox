@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     flex: 1,
     justifyContent: 'center',
+    alignItems:'center',
     // Android pan handlers crash without this declaration:
     backgroundColor: 'transparent',
   },
@@ -214,7 +215,7 @@ export default class LightboxOverlay extends Component {
     const header = (<Animated.View style={[styles.header, lightboxOpacityStyle]}>{(renderHeader ?
       renderHeader(this.close) :
       (
-        <TouchableOpacity onPress={this.close}>
+        <TouchableOpacity style={{top:40,left:10}} onPress={this.close}>
           <Text style={styles.closeButton}>×</Text>
         </TouchableOpacity>
       )
